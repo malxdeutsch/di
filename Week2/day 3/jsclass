@@ -1,0 +1,90 @@
+//global scope
+//local scope
+// if for, while are block scope
+//function are function scope
+
+//LOOP
+//console.log("hello");
+//console.log("hello");
+//console.log("hello");
+//console.log("hello");
+//console.log("hello");
+
+//OR
+
+//for loop: know ending point 
+    //ex. say hello 10 times
+    //for (when to start; when to stop; what to I need to do after each loop)
+for (let counter = 1;counter <=5; counter++){ // increasing each counter by 1){
+console.log("hello");
+console.log("hello counter is", counter);}
+    // this is block scope- uses "let". It will be execeuted a certain number of times.
+//steps
+//1st lopp: counter = 1 
+//=>1 <=5 => true 
+//console.log("hello counter is", 1);
+//2nd loop: counter = 2 
+//=>2 <=5 => true 
+//console.log("hello counter is", 2);
+//3rd loop: counter = 3
+//=>3 <=5 => true 
+//console.log("hello counter is", 3);
+
+for (let i = 0; i<15; i++){
+    if(i%2===0){
+        console.log(`${i} is even`);
+    }else {
+        console.log(`${i}is odd`);
+    }
+}
+
+let shopping = ["apple", "pear", "melon"];
+
+//console.log(shopping[0]);
+//console.log(shopping[1]);
+//console.log(shopping[2]);
+for(let index = 0; index < 3; index++){
+    console.log(shopping, [index]);
+}
+
+let shop = ["apple","pear", "melon", "banana"];
+for(let i = 0; i < shop.length; i++){
+    shop[i] = shop [i] + "s"
+    shop[i] +="s";
+}
+
+let prices = [23, 15, 34, 10];
+let sum = 0;
+for(let i =0; i < prices.length; i++){
+    sum += prices[i] 
+}
+console.log(sum)
+
+let colors = ["blue", "yellow", "red"];
+    //in a "for" loop with an array, use (let index in array)
+for(let index in colors){
+    console.log(index);
+    console.log(colors[index]);
+}
+
+let person = {
+    fname:"John", 
+    lname:"Doe", 
+    age:25
+};
+for (let element in person) {
+  console.log(person[element]) 
+}
+//for of: used in an array
+//for in: used for object
+
+//while loop: only IF the condition true, when we don't know how many times we want the loop to run
+    //while(if the condition is true, continue the statement.) If it is always true, it will be infinite.
+let count = 1;
+while(count<10){
+    console.log(count);
+    count +=2;
+}
+
+
+//do while loop

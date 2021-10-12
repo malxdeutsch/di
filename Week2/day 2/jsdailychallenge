@@ -1,0 +1,4 @@
+let sentence = "the dinner was not so bad, it was good"
+let result;
+let arrSentence=sentence.split(" ");
+console.log(arrSentence)
