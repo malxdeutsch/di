@@ -1,0 +1,13 @@
+var txt = ""; 
+for(var count = 0; count < 6; count++) { 
+    console.log(txt+="*"); 
+}
+
+
+for (let a = 0; a < 6; a++) {
+    let z = ''
+    for (let i = 0; i < a + 1; i++) {
+        z = z + '*'
+    }
+    console.log(z)
+}
