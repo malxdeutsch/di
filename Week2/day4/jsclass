@@ -1,0 +1,61 @@
+let colors = ["blue", "red", "yellow", "lightblue"];
+
+for (let index = 0; index < colors.length; index++) {
+    for (let j = 0; j < colors[index].length; j++) {;
+     console.log(colors[index][j]);   
+    }
+   
+}
+    //explain how does the console.log here work
+
+//first loop is per word and the next loop is per letter//
+
+//function: use the same equation, so can use it for different arrays.
+//function is declared by function nameofFuction(){ write the statement}(
+// the function needs to be called and invoked after it is declared by writing nameoffunction()
+//function welcome user (){
+    //console.log("Welcome User"); this won't make it show up; it was just created.
+    //};
+
+//If want it to show up, needs to be invoked- welcome user ()
+
+//To keep a function dynamic, need special syntext. So declare 
+// function nameOffunction (PARAMETER goes here){statement here}
+//Then invoke it by nameoffunction(ARGUEMENT goes here)
+//So if you want to greet someone different, make a function welcomespecificuser((parameter)username){
+    //console.log(`welcome ${username}`)
+// Then call the function by welcome user (ARGUEMENT "John")
+//The parameter is waiting to be filled; the arguement fill the parameter.
+//If declaring a function with a parameter, then NEED an arguement. Otherwise, it will be undefined.
+//If want 2 different things, add 2 things in the parameter (  ,  )
+// When calling the function, put 2 things in the arguement (  ,  )
+
+function pet(petName, petColor, petBreed) {
+    console.log(`${petName} is ${petColor} and a ${petBreed}`);
+}
+
+pet("brady", "gold","retriever");
+
+function color(age, colors){
+    let x = 2* age
+    for (let color of colors) {
+        console.log(color);        
+    }
+    colors.forEach(element => {
+        console.log(element);
+    });
+    for (let i = 0; i < colors.length; i++) {
+        console.log(colors[i]);
+        
+    }
+}
+
+color (46, ["red", "green", "blue"])
+
+//*explain the for loop here
+
+//if want a local variable accessable in the global, use return inside the local
+//and then it would be available in global.
+//To retrieve the value in global scope, need to console.log the function in global.
+//1. have return in the local function
+//2. in the new function, make a variable = to the function
