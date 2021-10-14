@@ -1,3 +1,5 @@
+
+
 function infoAboutMe(){
 console.log("My name is Malka and I am 24 years old");
 }
@@ -150,27 +152,47 @@ function hotelCost() {
 while (isNaN(nights)) {
     nights = parseFloat(prompt("How many nights would you like to stay?"))
 }
-cost = nights * 140;
-console.log(cost);
+let cost = nights * 140;
 return cost
 }
 
-hotelCost()
+let area = prompt("What is the destination?")
 
-let location = prompt("What is the destination?")
-
-function planeRideCost(params) {
-    if (location !== typeof stringValue){
-        alert(location)
+function planeRideCost() {
+    let plane = 0
+    if (!isNaN(area)){
+        area = prompt("What is the destination?")
     }
-    else if (location == "London"){
-        alert("$183")
+    else if (area == "London"){
+         plane = 183
     }
-    else if (location == "Paris"){
-        alert("$220")
+    else if (area == "Paris"){
+        plane = 220
     }
     else {
-        alert("$330")
+        plane = 330
     }
+   return plane 
+}
+
+function rentalCarCost (){
+    let total;
+    let days = parseInt(prompt("How many days would you like to rent the car?"));
+    if(isNaN(days)){
+        days = parseInt(prompt("How many days would you like to rent the car?"));
+    }
+    else {
+        total = (days * 40)
+            if (days > 10){
+            total - 1.05
+            }
+    }
+    return total
+}
+
+function totalVacationCost() {
+    let vacay = rentalCarCost() + hotelCost()+ planeRideCost()
+    return vacay
     
 }
+console.log(totalVacationCost());

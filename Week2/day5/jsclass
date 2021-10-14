@@ -1,0 +1,3 @@
+//break- stops and goes out of th eloop even if want to do more loops.
+//continue- skips the  rest of the loop, and continues at the beginning of the loop
+//break breaks out of the loop and doesn't exist, but contnue just skips to the next round of the loop
