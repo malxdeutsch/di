@@ -106,71 +106,19 @@ let prices = {
     "blueberry":10
 } 
 
-let sum = 0
-
 let shoppingList = ["banana", "orange", "apple"]
 function myBill() {
     for (let i = 0; i < shoppingList.length; i++) {
         if (stock[shoppingList[i]] > 0) {
-          sum += prices[shoppingList[i]];  
+          console.log(sum(prices[shoppingList[i]]));  
         }
+        
     }
-       console.log(sum); 
+        
     }
             
 myBill()
 
-
-let bill = parseFloat(prompt("John, how much is the bill?"))
-
-function tip(tipNumber) {
-    let percent = 0;
-    if (bill < 50) {
-        percent = bill * .2;
-    }
-    else if (bill > 50 && bill < 200){
-        percent = bill * .15;
-    }
-    else {
-        percent = bill * .1;
-    }
-    return percent
-}
-
-
-tip(bill)
-console.log (tip(bill))
-console.log (bill + tip(bill))
-
-
-
-let nights = prompt("How many nights would you like to stay?")
-
-function hotelCost() {
-while (isNaN(nights)) {
-    nights = parseFloat(prompt("How many nights would you like to stay?"))
-}
-cost = nights * 140;
-console.log(cost);
-return cost
-}
-
-hotelCost()
-
-let location = prompt("What is the destination?")
-
-function planeRideCost(params) {
-    if (location !== typeof stringValue){
-        alert(location)
-    }
-    else if (location == "London"){
-        alert("$183")
-    }
-    else if (location == "Paris"){
-        alert("$220")
-    }
-    else {
-        alert("$330")
-    }
-    
+function tip(params) {
+    if 
 }
