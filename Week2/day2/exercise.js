@@ -30,17 +30,17 @@ else {
 
 
 let users = ["Lea123", "Princess45", "cat&doglovers", "helooo@000"];
-let userName= users[0]
+
 let length = users.length - 2
 
-if (users = 0) {
+if (users.length == 0) {
     console.log("No one is online.");
 }
-else if (users = 1) {
-    console.log(`${userName} is online`);
-} else if (users = 2){
-    console.log(`${userName[0]} and ${userName[1]} are online`);
+else if (users.length == 1) {
+    console.log(`${users[0]} is online`);
+} else if (users.length == 2){
+    console.log(`${users[0]} and ${users[1]} are online`);
 }
 else{
-    console.log(`${userName[0]} and ${userName[1]} and ${lengtg} users are online`);
+    console.log(`${users[0]} and ${users[1s]} and ${length} users are online`);
 }
