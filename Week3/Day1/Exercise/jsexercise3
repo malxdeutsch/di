@@ -1,0 +1,12 @@
+let myElement = document.body.firstElementChild
+myElement.style.backgroundColor = "lightBlue";
+myElement.style.padding = "25px"
+
+let myList = document.querySelector("li");
+myList.remove();  
+
+myList.style.border = "25px solid black"
+
+document.body.style.fontSize = "50px"
+
+

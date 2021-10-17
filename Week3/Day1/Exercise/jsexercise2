@@ -1,0 +1,18 @@
+let newName = document.body.children[1]
+let newText = newName.children[1]
+newText.innerHTML= "Richard";
+
+let newElement=newName.children[0]
+newElement.innerHTML= "Malka";
+
+let newMe = document.body.children[2]
+let newMalka = newMe.children[0]
+newMalka.innerHTML= "Malka";
+
+let newClass = document.getElementsByClassName("list")
+for (let myClass of newClass) {
+let newLi = document.createElement("li");
+let newWord = document.createTextNode("Hey students.");
+newLi.appendChild(newWord);
+myClass.appendChild(newLi);
+}

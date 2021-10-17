@@ -1,0 +1,9 @@
+let newName = document.getElementById ("navBar")
+newName.setAttribute("id", "socialNetworkNavigation" )
+
+let newLi= document.createElement("li")
+let newText = document.createTextNode("Logout")
+newLi.appendChild(newText)
+let newUl = document.querySelector("ul")
+newUl.appendChild(newLi)
+
