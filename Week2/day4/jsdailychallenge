@@ -1,0 +1,27 @@
+let words = prompt("Give several words separated by commas.")
+
+let myArr = words.split(",");
+ console.log(myArr);
+ let x = 0
+ for (let index = 0; index < myArr.length; index++) {
+     let trimword = myArr[index].trim()
+    if (x < trimword.length) {
+         x = trimword.length;
+    }
+        
+}
+ console.log(x);
+
+function printNS(char) {
+    console.log(char.repeat(x));
+
+}
+printNS("*")
+
+function printRow(word) {
+    console.log("*" +word.padEnd(x, " ") + "*");
+}
+for (let word of myArr) {
+    printRow(word)
+}
+printNS("*")
