@@ -1,0 +1,17 @@
+let myArr =[ "Saturn", "Jupiter", "Mars" ];
+
+for (planet of myArr) {
+    let myPlanet= document.createElement("div");
+    function myFunction() {
+    let element = document.getElementById("div");
+       let planet = element.addClass("planet");
+        planet.addClass("color");
+      }
+        let newText = document.getElementsByClassName("listPlanets");
+        newText.appendChild(myPlanet)
+}
+
+
+myFunction();
+
+

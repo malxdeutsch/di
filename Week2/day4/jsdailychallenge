@@ -13,13 +13,13 @@ let myArr = words.split(",");
  console.log(x);
 
 function printNS(char) {
-    console.log(char.repeat(x));
+    console.log("*"+" "+char.repeat(x)+" "+ "*");
 
 }
 printNS("*")
 
 function printRow(word) {
-    console.log("*" +word.padEnd(x, " ") + "*");
+    console.log("*"+" "+word.padEnd(x, " ") + " " + "*");
 }
 for (let word of myArr) {
     printRow(word)

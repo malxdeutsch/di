@@ -1,0 +1,92 @@
+// DOM represents HTML as an object in Javascript. That is in the element tab online.
+// It is just the representation of the HTML, not the actual HTML.
+//  Each part of the tree of HTML is called a node
+    // root node (document); then are the children: element node (the head, body, and title);
+    // text node (the alert, MyTitle); attribute node (type).
+// if put document in javascript, then DOM will shop up, which means the html form
+// the documennt is the object, so the children are the key.
+    //therefore, if want the key- write document.body
+// to access sibiling- nextElementSibiling: console.log("divElement.nextElementSibiling")
+// there is a property that retrieves the text inside a paragraph so it can be changed;
+// that property is represented by = . So paragraphElement.textcontent = "Hello John"
+// 1. Create a paragraph: let newParagraph = document.createElement("p");
+// 2. Add some text to the paragraph: let newText = document.createTextNode("My new paragraph");
+// 3. Add the text to the paragraph: newParagraph.appendChild(newText);
+//Retrieve the parent: let divParent
+
+//divParent.appendChild(newParagraph);
+
+// if person["isSignedIn"] {
+    // let title = document.body.firstElementChild
+    //title.textContent += `${person[username]}
+
+  
+let divElement = document.body.firstElementChild
+let divElementSecond = document.body.children[0]
+let ulElement = divElement.nextElementSibling
+let ulElementSecond = document.body.children[1]
+let liElement = ulElement.lastElementChild
+let liElementSecond = ulElement.children[1]
+
+console.log(divElement, divElementSecond);
+console.log(ulElement, ulElementSecond);
+console.log(liElement, liElementSecond);
+
+liElement.textcontent += "Smith"
+
+
+//there is another method: getelementbyID which gives one element:
+//document.getElementByID("title")
+// Can getElementsByTagName("") which will give a collection
+// if want one from the collection, add[] and put the position like in an array
+// Can getElementsByClassName("") which will give a collection
+// Can use querySelector, which uses CSS syntax, use #, so ("#...")
+// to specify with CSS, use >. so ("#...>...")
+//querySelector chooses ONE element that matches the selector
+// use querySelectorAll to get all the elements that match the selector
+
+
+//let divElement = document.body.firstElementChild
+//let divElementSecond = document.getElementById("container")
+
+//let ulElement = document.querySelectorAll(".list")
+//let ulElementSecond = document.getElementsByClassName("list")
+
+//for (let index = 0; index < ulElement.length; index++) {
+//let liElement = ulElement[index].firstElementChild.textContent;
+//let liElementSecond = ulElement[index].children[0].textContent;
+//console.log(liElement);
+//console.log(ulElement[index]);
+//}
+
+//console.log(divElementSecond);
+//console.log(ulElement);
+
+//if watch to change the style, use ".style". So div.style
+// to change the background color: div.style.backgroundColor = "light blue"
+// since it is being written in JS, don't use -, use camelCase
+// if need to access a lot of style, go to a CSS doc
+// class, ID are attributes. Other ones are source, HREF
+// in DOM, can add attributes to an element by adding set.Att(name,value)
+// to retrieve anchor, add text, and add attribute
+// 1. let anchor = document.getElementByID("link")
+// 2. anchor.textContent ="Click here."
+// 3. anchor.setAttribute("href", "www.google.com")
+
+/*let names = ["John", "Lola", "Tom"];
+function change() {
+    for (let name of names) {
+        let newParagraph = document.createElement("p"); 
+        let newText = document.createTextNode(name);
+        newParagraph.appendChild(newText);
+        let newDiv = document.getElementById("container")
+        newDiv.appendChild(newParagraph)
+        newParagraph.style.fontSize = "25px"
+        newParagraph.style.color = "yellow"
+    }
+  
+    }
+
+change()*/
+
+

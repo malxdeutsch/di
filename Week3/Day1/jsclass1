@@ -20,19 +20,19 @@
     // let title = document.body.firstElementChild
     //title.textContent += `${person[username]}
 
- //?   
-//let divElement = document.body.firstElementChild
-// let divElementSecond = document.body.children[0]
-// let ulElement = divElement.nextElementSibling
-// let ulElementSecond = document.body.children[1]
-// let liElement = ulElement.lastElementChild
-// let liElementSecond = ulElement.children[1]
+  
+let divElement = document.body.firstElementChild
+let divElementSecond = document.body.children[0]
+let ulElement = divElement.nextElementSibling
+let ulElementSecond = document.body.children[1]
+let liElement = ulElement.lastElementChild
+let liElementSecond = ulElement.children[1]
 
-// console.log(divElement, divElementSecond);
-// console.log(ulElement, ulElementSecond);
-// console.log(liElement, liElementSecond);
+console.log(divElement, divElementSecond);
+console.log(ulElement, ulElementSecond);
+console.log(liElement, liElementSecond);
 
-// liElement.textcontent += "Smith"
+liElement.textContent += "Smith"
 
 
 //there is another method: getelementbyID which gives one element:
@@ -45,15 +45,6 @@
 //querySelector chooses ONE element that matches the selector
 // use querySelectorAll to get all the elements that match the selector
 
-//<div id="container">Users:</div>
-  //  <ul class="list">
-    //    <li>John</li>
-      //  <li>Pete</li>
-  //  </ul>
-  //  <ul class="list">
-  //     <li>Sarah</li>
-  //      <li>Dan</li>
-  //   </ul>
 
 //let divElement = document.body.firstElementChild
 //let divElementSecond = document.getElementById("container")
@@ -82,7 +73,7 @@
 // 2. anchor.textContent ="Click here."
 // 3. anchor.setAttribute("href", "www.google.com")
 
-let names = ["John", "Lola", "Tom"];
+/*let names = ["John", "Lola", "Tom"];
 function change() {
     for (let name of names) {
         let newParagraph = document.createElement("p"); 
@@ -96,6 +87,6 @@ function change() {
   
     }
 
-change()
+change()*/
 
 
