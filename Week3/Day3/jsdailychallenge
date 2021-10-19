@@ -1,0 +1,22 @@
+/*
+let ini = document.getElementById('ini');
+function allLetter(inputtxt)
+      { 
+          console.log(inputtxt);
+      var letters = /^[A-Za-z]+$/;
+      if(inputtxt.value.match(letters))
+      {
+      return true;
+      }
+      else
+      {
+      ini.slice(-1)
+      return false;
+      }
+    }
+     input type='text' name='text1'  onkeyup="allLetter(document.form1.text1)" id="ini"/></li>
+*/
+
+if (!/[^a-zA-Z]/.test(word)){
+    console.log("You can't do that.");
+}
