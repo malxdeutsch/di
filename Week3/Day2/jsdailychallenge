@@ -1,0 +1,2 @@
+let nameValue = window.onload.querySelectorAll('input[type="text"]');
+console.log(nameValue);

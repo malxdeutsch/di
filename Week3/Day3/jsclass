@@ -1,0 +1,126 @@
+// use events specific for drog and drop
+// these are built in events, like dragstart, dragleave, drag, dragened, drop
+// 1. need to set the attribute to dragable => after class, write draggable= true in HTML
+// 2. need to retrieve it in Javascript => let item = document.getElementById("item");
+// 3. next eventListener in Javascript => item.eventListener("dragstart", startDragging);
+// 4. write function in Javascript => function startDragging (event) {event.target.classList.add("startDragging")};
+// use the event.target to make sure that the one that is being dragged is the one that is changing color
+// dataTransfer is a key inside the object that gives info about what is happening with the drag and drop
+// dataTransfer.setData: sets the element that should be dropped in the future => ("type of data", id of the element)
+// to move a node, use ("text/plain", ) as the type of data. The ID would be (,event.target.id)
+// all events- besides drag- are on the target. ex) the dropzone
+
+// Target box where it should be dropped
+// need to retrieve all the targets (document.getElementsByClassName("dropzone"));
+// this will give a collection of all them. So look through them and add
+// do a through loop, usually in a function. function addTheListeners()
+//{for (let zone of allDropZones){zone.addEventListener("dragover", draggingOver)}}
+// call the function => addTheListeners()
+// make another function => function draggingOver(event){
+    //event.preventDefault()} preventing default will allow
+// for drop, need to allow the targets to allow drop. 
+// So add zone.addEventListener("drop", dropping) in the first function
+// make another function => function dropping(event){
+    //let elementToDrop = event.dataTransfer.get Data("text/plain");
+// let elemNode = document.getElementById(elementToDrop)
+//event.target.appendChild(elemNode)
+
+// about the green box
+
+// 1. Retrieve the green box
+let item = document.getElementById("item");
+let itemSecond = document.getElementById("itemSecond")
+
+item.addEventListener("dragstart", startDragging);
+itemSecond.addEventListener("dragstart", startDragging);
+
+function startDragging (event) {
+	console.log("start dragging", event.target.id);
+	event.target.classList.add("startDragging");
+	// console.log(event.dataTransfer)
+	// syntax
+	// event.dataTransfer.setData("type of data", id of the elem)
+	event.dataTransfer.setData("text/plain",event.target.id)
+}
+// the black target boxes
+
+let allDropZones = document.getElementsByClassName("dropzone");
+console.log(allDropZones)
+
+function addTheListeners (){
+	for (let zone of allDropZones){
+		zone.addEventListener("dragover", draggingOver)
+		zone.addEventListener("drop", dropping)
+        zone.addEventListener("dragenter", dragEnter)
+	}
+}
+
+addTheListeners()
+
+// create the dragging Over function
+function draggingOver (event) {
+	event.preventDefault();
+	// console.log(event.target)
+}
+
+function dragEnter (event) {
+	event.preventDefault();
+}
+
+// Create the dropping function
+function dropping(event){
+    event.preventDefault();
+	// console.log(event.target)
+	// 1. retrieve the element that we want to drop
+	let elementToDrop = event.dataTransfer.getData("text/plain")
+	// 2. append the element on the drop zone
+	let elemNode = document.getElementById(elementToDrop)
+	event.target.appendChild(elemNode)
+    elemNode.classList.add("afterDrop")
+    event.target.classList.add("dragEnter")
+}
+
+// setTimeout() allows a message to show up after a certain amount of time of being on the website
+// write it=> set Timeout(function you want to call, after how much time)
+// time works in miliseconds, not seconds. ex) 2000 = 2 seconds
+// only runs once
+// if want to run it continuously, use setInterval(), which goes indefinitively
+// setInterval(the function you want, how often it should happen)
+// can look like this setInterval:
+    // let section = document.getElementById("container")
+    // function addDiv(){
+    // let div=document.createElement("div")
+    // let text=document.createTextNode("hello")
+    // div.appendChild(text)
+    // section.appendChild(div)
+    //   }
+// setInterval(addDiv, 1000)
+
+// But it needs to clear- it shouldn't go forever
+//Create a button that will stop the animation
+// let button= document.getElementById("btn")
+//button.addEventListener("click",stopAnimation)
+// this should be put BEFORE the function
+// should set the setInterval to a variable because JS counts all the setIntervals and this way it oculd be stopped
+// let timeId= setInterval(addDiv,1000)
+// function stopAnimation(){clearInterval(timeId)}
+
+/*
+let section = document.getElementById("container")
+let button = document.getElementById("btn")
+
+button.addEventListener("click", stopAnimation)
+
+function addDiv(){
+	let div = document.createElement("div");
+	let text = document.createTextNode("hello");
+	div.appendChild(text);
+	section.appendChild(div);
+}
+
+let timeId = setInterval(addDiv, 1000);
+
+function stopAnimation(){
+	clearInterval(timeId)
+}
+*/

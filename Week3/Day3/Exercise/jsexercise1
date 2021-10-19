@@ -1,0 +1,14 @@
+
+function myMove() {
+    let section = document.getElementById("container");
+    let pos = 0;
+    let id = setInterval(function() {
+      if (pos == 350) {
+        clearInterval(id);
+      }
+      else {
+        pos++;
+        section.style.left = pos + "px";
+      }
+    }, 5);
+  }

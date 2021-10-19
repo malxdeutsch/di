@@ -1,0 +1,29 @@
+let animate = document.getElementById("animate");
+animate.addEventListener("dragstart", startDragging);
+
+function startDragging (event) {
+	console.log("start dragging", event.target.id);
+    event.dataTransfer.setData("text/plain",event.target.id)
+}
+
+let dropZones = document.getElementById("container");
+console.log(dropZones)
+
+function addTheListener (){
+    dropZones.addEventListener("dragover", draggingOver)
+	dropZones.addEventListener("drop", dropping)
+}
+
+addTheListener()
+
+function draggingOver (event) {
+	event.preventDefault();
+}
+
+function dropping(event){
+    event.preventDefault();
+    let elementToDrop = event.dataTransfer.getData("text/plain")
+    let elemNode = document.getElementById(elementToDrop)
+    event.target.appendChild(elemNode)
+}
+
