@@ -1,17 +1,34 @@
-let myArr =[ "Saturn", "Jupiter", "Mars" ];
+let myArr =[ 
+    {name:"Saturn",
+    color: "blue",  
+},
+    {name:"Jupiter",
+    color: "red",
+},
+    {name:"Mars",
+    color: "yellow",
+     }
+ ];
+let main = document.querySelector(".listPlanets");
+console.log(main);
 
-for (planet of myArr) {
-    let myPlanet= document.createElement("div");
-    function myFunction() {
-    let element = document.getElementById("div");
-       let planet = element.addClass("planet");
-        planet.addClass("color");
-      }
-        let newText = document.getElementsByClassName("listPlanets");
-        newText.appendChild("myPlanet")
+for (item of myArr) {
+    let newDiv= document.createElement("div");
+    let newText = document.createTextNode(item.name);
+    newDiv.appendChild(newText);
+    newDiv.classList.add("planet");
+    newDiv.style.backgroundColor = item.color;
+
+    main.appendChild(newDiv);
 }
+    //function myFunction() {
+    //let element = document.getElementById("div");
+    //let planet = element.addClass("planet");
+    //planet.addClass("color");
+     // }
+        
+     //   newText.appendChild("myPlanet")
+//}
 
-
-myFunction();
 
 
