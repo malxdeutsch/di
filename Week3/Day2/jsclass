@@ -1,0 +1,47 @@
+// Inline Javascript
+//Invent handler happens in case of an event
+// different one, like onclick, keyup, or mouseover
+// so write it like this onclick="welcome()" > Hello please click here<
+// then write the function with the same name in java script. So write function welcome(){}"
+
+// Or can retrieve the place, say when it's clicked, and then
+// make an anonymous function. So
+// button.onclick=function(){console.log("hello")}
+
+// Or use event listener
+//we addeventlistener(), which will allow as many handlers
+// element.addEventListener(DOM event, callback function)
+// so if one wants a button that when clicked on says hello
+// button.addeventListener("click", function(){console.log("hello")} )
+
+
+/*let buttonRed = document.getElementById("red")
+let buttonBlue = document.getElementById("blue");
+
+buttonRed.addEventListener("click", function(){
+    document.body.style.backgroundColor = "red"
+})
+
+buttonBlue.addEventListener("click", function(){
+    document.body.style.backgroundColor = "blue"
+})
+*/
+
+let colors = ["blue", "yellow", "green", "pink"];
+let div = document.getElementById("container")
+function createButton(){
+for (let color of colors) {
+let btn = document.createElement ("button")
+let text = document.createTextNode (color);
+btn.addEventListener("click", changeColor)
+btn.appendChild(text);
+div.appendChild(btn)
+    }
+}
+createButton()
+
+function changeColor(event){
+	console.log(event.target)
+	let colorButton = event.target.textContent.toLowerCase();
+	document.body.style.backgroundColor= colorButton
+}

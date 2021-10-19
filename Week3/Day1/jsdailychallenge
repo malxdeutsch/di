@@ -8,7 +8,7 @@ for (planet of myArr) {
         planet.addClass("color");
       }
         let newText = document.getElementsByClassName("listPlanets");
-        newText.appendChild(myPlanet)
+        newText.appendChild("myPlanet")
 }
 
 

@@ -1,0 +1,20 @@
+function getBold_items() {
+  let bold_Items = document.getElementsByTagName('strong')
+    return bold_Items
+}
+
+ function highlight(event) { 
+     console.log(event);                                                 
+     event.target.style.color = "blue";
+}
+
+function return_normal(event) {
+    console.log(event);
+    event.target.style.color = "black";
+}
+let items = getBold_items()
+for (let index = 0; index < items.length; index++) {
+    let element = items[index];
+    element.addEventListener("mouseover", highlight)
+    element.addEventListener("mouseout",return_normal)
+}

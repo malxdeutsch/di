@@ -1,0 +1,53 @@
+let lastP = document.querySelector("article").lastElementChild;
+lastP.remove();
+
+let newColor = document.querySelector("h2");
+newColor.addEventListener("click", function() {
+    newColor.style.backgroundColor = "blue";
+})
+
+let size = document.querySelector("h1");
+let random = Math.floor(Math.random() * 101)
+    size.style.fontSize = `${random}px`;
+
+let hide = document.querySelector("h3");
+hide.addEventListener("click", function() {
+    hide.style.display = "none";
+})
+
+let btn = document.createElement("button");
+btn.innerHTML = "click me";
+document.body.appendChild(btn);
+btn.addEventListener("click", function(){
+    let newParagraph = document.querySelectorAll("p");
+    for (words of newParagraph) {
+    words.style.fontWeight = "bold"
+    }
+  
+})
+let newForm = document.forms[0];
+newForm.addEventListener("submit", function(e){
+    e.preventDefault();
+    let nameValue = newForm.querySelectorAll('input[type="text"]');
+    for (newName of nameValue){
+    let newAnswer = newName.value
+    console.log(newAnswer);
+    let newTable = document.getElementById("myTable");
+    let row = document.createElement("tr");
+    row.innerText = newAnswer;
+    newTable.appendChild(row)
+    }
+}
+)
+
+let changeP = document.querySelector("article").lastElementChild;
+console.log(changeP);
+changeP.addEventListener("mouseover", function(event){
+    console.log(event.target);
+    event.target.classList.add("fade-out");
+})
+
+
+
+
+
