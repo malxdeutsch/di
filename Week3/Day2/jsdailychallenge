@@ -1,16 +1,26 @@
-let newText = document.querySelectorAll('input[type="text"]');
-console.log(newText);
+let inputs = document.querySelectorAll('input[type="text"]');
 function newClick() {
-    newText.forEach (item => 
+  for (words of inputs) {
+    if (words.value == "") {
+      return;
+    }
+  }
+  let story = document.getElementById("story");
+  let text = `there was once a ${inputs[0].value} who was very ${inputs[1].value}. \n ${inputs[2].value} then ${inputs[3].value} to ${inputs[4].value}.`;
+  story.innerText = text;
+}
+
+/* newText.forEach (item => 
         let value = (item.value)
-    console.log(value);
+    console.log(value));
     if (!checkFields()) {
         alert("Please fill all the spaces.");
         return
     }
-        return 
-    )
+        return */
 
+/*
     let story =document.getElementById("story");
     let text = `there was once a ${value[0]} who was very ${value[1]}. /n ${value[2]} then ${value[3]} to ${value[4]}`
-    story.AppendChild(text);
+    story.appendChild(text);
+*/
