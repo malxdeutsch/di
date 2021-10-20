@@ -1,5 +1,18 @@
+
+let input = document.getElementById('textfield');
+input.addEventListener("keydown", checkChar);
+
+function checkChar(event){
+if(event.keyCode <= 90 && event.keyCode >= 65){
+    console.log(event.key, "is a string");
+}
+else {
+    console.log(event.key, "is a number");
+    event.preventDefault();
+}
+}
+
 /*
-let ini = document.getElementById('ini');
 function allLetter(inputtxt)
       { 
           console.log(inputtxt);
@@ -10,13 +23,13 @@ function allLetter(inputtxt)
       }
       else
       {
-      ini.slice(-1)
+      ini.slice(0,-1)
       return false;
       }
     }
-     input type='text' name='text1'  onkeyup="allLetter(document.form1.text1)" id="ini"/></li>
-*/
+
 
 if (!/[^a-zA-Z]/.test(word)){
     console.log("You can't do that.");
 }
+*/

@@ -76,6 +76,7 @@ function dropping(event){
 	// 2. append the element on the drop zone
 	let elemNode = document.getElementById(elementToDrop)
 	event.target.appendChild(elemNode)
+    
     elemNode.classList.add("afterDrop")
     event.target.classList.add("dragEnter")
 }
