@@ -1,0 +1,22 @@
+*{
+    background-color: lightpink;
+}
+    
+
+body{
+    text-align: center;
+}
+
+header{
+    color: white;
+    font-size: 44;
+    font-weight: bold;
+}
+
+form{
+    display: inline;
+    background-color: white;
+    color: gray;
+    border: 1px solid white;
+}
+

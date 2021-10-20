@@ -1,0 +1,28 @@
+let listTasks = [];
+let words;
+function addTask(event){
+    if(document.getElementById("answer").value.length > 0){
+    words= document.getElementById("answer").value
+    console.log(words);
+    listTasks.push(words)
+    let newDiv = document.createElement('div');
+    let newText= document.createTextNode(words);
+    newDiv.appendChild(newText)
+    let tasks = document.getElementsByClassName("listTasks")[0];
+    
+    let checkBox= document.createElement('input');
+    checkBox.setAttribute("type", "checkbox");
+    newDiv.appendChild(checkBox);
+    let x = document.createElement('button');
+    let letter = document.createTextNode('x');
+    x.appendChild(letter);
+    x.style.font= "awesome";
+    newDiv.appendChild(x);
+
+
+    tasks.appendChild(newDiv);
+
+    
+}
+}
+
