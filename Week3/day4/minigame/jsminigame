@@ -1,0 +1,77 @@
+// need array of color. need a loop of 8*3 itertions
+//create a new div for each iteration. Each iteration- assign a color to div
+
+let pallet = document.getElementById("pallet")
+
+let myArr = ['#FFFFFF', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+'#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+'#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+'#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+'#66994D',]
+
+for (let index = 0; index < myArr.length; index++) {
+    const element = document.createElement("div");
+    element.style.backgroundColor = myArr[index];
+    pallet.appendChild(element);
+    element.addEventListener("click",retrieveColor)
+}
+let newColor;
+
+function retrieveColor(event){
+    let colorOfSquare = event.target.style.backgroundColor
+    console.log(colorOfSquare);
+    newColor = colorOfSquare
+}
+
+
+// need a loop that does 60*24 iterations and create a new div in each iteration
+
+let grid = document.getElementById("grid")
+let column = 60 
+let row = 24
+let total = column*row
+
+for (let index = 0; index < total; index++) {
+    const element = document.createElement("div");
+    grid.appendChild(element);
+    element.addEventListener("click", backgroundColor)
+    element.addEventListener("mousedown", downNow)
+    element.addEventListener("mouseover", overNow)
+    element.addEventListener("mouseup", upNow)
+}
+function backgroundColor(event){
+    event.target.style.backgroundColor = newColor
+}
+let isMouseDown=false;
+
+function downNow(event){
+    isMouseDown = true
+}
+function overNow(event){
+    if (isMouseDown == true){
+     event.target.style.backgroundColor = newColor
+    }
+}
+function upNow(event){
+    isMouseDown = false
+}
+
+//game: 
+// pallet:go into each loop and add an eventlistener of click
+// that calls the callback function. the function should be 
+// that you retrieve the color of the item clicked (target).
+// then save the background color
+// grid: eventListener for each square in the loop from before.
+// click, callback. This callback will change the background color
+// from the one saved (value from global variable) from before. How?
+// Assign background color to the event.target.
+// mousedown and mouseover- press and moving => paint squares
+// add eventListeners to the squares: mousedown and mouseover
+// when mousedown event is executed, create variable 'ismousedown' = true
+// when mouseover event is executed, check whether the variable is true
+// if it is true, then change the background color of square
+// add another event- not pressing, no more painting
+//mouseup event: when the mouse is up, the variable 'ismousedown' is false
+// clear button:button.eventListener("click", deleteColors)
+// function deleteColors - click on button, background color goes to white 
+// by going through all the squares in a loop and then changing them to white event.target.style.backgroundColor = white
