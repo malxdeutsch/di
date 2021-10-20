@@ -1,4 +1,11 @@
-let sentence = "the dinner was not so bad, it was good"
-let result;
-let arrSentence=sentence.split(" ");
-console.log(arrSentence)
+let sentence = "the dinner was not so bad, I liked it";
+let wordNot = sentence.search("not");
+console.log(wordNot);
+let wordBad = sentence.search("bad");
+console.log(wordBad);
+if (wordNot < wordBad) {
+  let newSen = sentence.replace("not so bad", "good");
+  console.log(newSen);
+} else {
+  console.log(sentence);
+}
