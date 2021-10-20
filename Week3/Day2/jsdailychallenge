@@ -1,2 +1,16 @@
-let nameValue = window.onload.querySelectorAll('input[type="text"]');
-console.log(nameValue);
+let newText = document.querySelectorAll('input[type="text"]');
+console.log(newText);
+function newClick() {
+    newText.forEach (item => 
+        let value = (item.value)
+    console.log(value);
+    if (!checkFields()) {
+        alert("Please fill all the spaces.");
+        return
+    }
+        return 
+    )
+
+    let story =document.getElementById("story");
+    let text = `there was once a ${value[0]} who was very ${value[1]}. /n ${value[2]} then ${value[3]} to ${value[4]}`
+    story.AppendChild(text);
