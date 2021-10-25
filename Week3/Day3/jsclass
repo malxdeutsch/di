@@ -17,11 +17,11 @@
 //{for (let zone of allDropZones){zone.addEventListener("dragover", draggingOver)}}
 // call the function => addTheListeners()
 // make another function => function draggingOver(event){
-    //event.preventDefault()} preventing default will allow
-// for drop, need to allow the targets to allow drop. 
+//event.preventDefault()} preventing default will allow
+// for drop, need to allow the targets to allow drop.
 // So add zone.addEventListener("drop", dropping) in the first function
 // make another function => function dropping(event){
-    //let elementToDrop = event.dataTransfer.get Data("text/plain");
+//let elementToDrop = event.dataTransfer.get Data("text/plain");
 // let elemNode = document.getElementById(elementToDrop)
 //event.target.appendChild(elemNode)
 
@@ -29,56 +29,56 @@
 
 // 1. Retrieve the green box
 let item = document.getElementById("item");
-let itemSecond = document.getElementById("itemSecond")
+let itemSecond = document.getElementById("itemSecond");
 
 item.addEventListener("dragstart", startDragging);
 itemSecond.addEventListener("dragstart", startDragging);
 
-function startDragging (event) {
-	console.log("start dragging", event.target.id);
-	event.target.classList.add("startDragging");
-	// console.log(event.dataTransfer)
-	// syntax
-	// event.dataTransfer.setData("type of data", id of the elem)
-	event.dataTransfer.setData("text/plain",event.target.id)
+function startDragging(event) {
+  console.log("start dragging", event.target.id);
+  event.target.classList.add("startDragging");
+  // console.log(event.dataTransfer)
+  // syntax
+  // event.dataTransfer.setData("type of data", id of the elem)
+  event.dataTransfer.setData("text/plain", event.target.id);
 }
 // the black target boxes
 
 let allDropZones = document.getElementsByClassName("dropzone");
-console.log(allDropZones)
+console.log(allDropZones);
 
-function addTheListeners (){
-	for (let zone of allDropZones){
-		zone.addEventListener("dragover", draggingOver)
-		zone.addEventListener("drop", dropping)
-        zone.addEventListener("dragenter", dragEnter)
-	}
+function addTheListeners() {
+  for (let zone of allDropZones) {
+    zone.addEventListener("dragover", draggingOver);
+    zone.addEventListener("drop", dropping);
+    zone.addEventListener("dragenter", dragEnter);
+  }
 }
 
-addTheListeners()
+addTheListeners();
 
 // create the dragging Over function
-function draggingOver (event) {
-	event.preventDefault();
-	// console.log(event.target)
+function draggingOver(event) {
+  event.preventDefault();
+  // console.log(event.target)
 }
 
-function dragEnter (event) {
-	event.preventDefault();
+function dragEnter(event) {
+  event.preventDefault();
 }
 
 // Create the dropping function
-function dropping(event){
-    event.preventDefault();
-	// console.log(event.target)
-	// 1. retrieve the element that we want to drop
-	let elementToDrop = event.dataTransfer.getData("text/plain")
-	// 2. append the element on the drop zone
-	let elemNode = document.getElementById(elementToDrop)
-	event.target.appendChild(elemNode)
-    
-    elemNode.classList.add("afterDrop")
-    event.target.classList.add("dragEnter")
+function dropping(event) {
+  event.preventDefault();
+  // console.log(event.target)
+  // 1. retrieve the element that we want to drop
+  let elementToDrop = event.dataTransfer.getData("text/plain");
+  // 2. append the element on the drop zone
+  let elemNode = document.getElementById(elementToDrop);
+  event.target.appendChild(elemNode);
+
+  elemNode.classList.add("afterDrop");
+  event.target.classList.add("dragEnter");
 }
 
 // setTimeout() allows a message to show up after a certain amount of time of being on the website
@@ -88,13 +88,13 @@ function dropping(event){
 // if want to run it continuously, use setInterval(), which goes indefinitively
 // setInterval(the function you want, how often it should happen)
 // can look like this setInterval:
-    // let section = document.getElementById("container")
-    // function addDiv(){
-    // let div=document.createElement("div")
-    // let text=document.createTextNode("hello")
-    // div.appendChild(text)
-    // section.appendChild(div)
-    //   }
+// let section = document.getElementById("container")
+// function addDiv(){
+// let div=document.createElement("div")
+// let text=document.createTextNode("hello")
+// div.appendChild(text)
+// section.appendChild(div)
+//   }
 // setInterval(addDiv, 1000)
 
 // But it needs to clear- it shouldn't go forever
