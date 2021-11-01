@@ -21,22 +21,45 @@ const printA = () => {
 
 printA();
 */
-var number = 0;
-            var div = document.getElementById("internal");
-            var table = document.createElement("table");
-            div.appendChild(table);
 
-            for (var i = 0; i < 7; i++) {
+var div = document.getElementById("internal");
+var table = document.createElement("table");
+div.appendChild(table);
 
-                var rows = document.createElement("tr");
-                table.appendChild(rows);
+for (var row = 0; row < 7; row++) {
+    var rows = document.createElement("tr");
+    table.appendChild(rows)
 
-                for (var j = 0; j < 7; j++) {
-
-                    var columns = document.createElement("td");
-                    var text = document.createTextNode(number);
-                    columns.appendChild(text);
-                    rows.appendChild(columns);
-                    number++;
-                }
+    for (var col = 0; col < 8; col++) {
+        var columns = document.createElement("td");
+        if (row===0 && col!==0)  {
+            var text = document.createTextNode(col-1);
+            columns.appendChild(text);
+            rows.appendChild(columns);
+        }
+    
+        else if (col===0 && row!==0) {
+            var text = document.createTextNode(row-1);
+            columns.appendChild(text);
+            rows.appendChild(columns);
+}
+        else {
+            if ((col==2 || col==6)&& row!==1 ){
+            var text = document.createTextNode("*");
+            columns.appendChild(text);
+            rows.appendChild(columns);
+            }   
+            else if ((row ==1 || row ==3) && (col == 3 || col ==4 || col ==5)){
+                var text = document.createTextNode("*");
+                columns.appendChild(text);
+                rows.appendChild(columns); 
             }
+            else {
+                var text = document.createTextNode(" ");
+                columns.appendChild(text);
+                rows.appendChild(columns);
+            }
+
+        }
+}
+}
