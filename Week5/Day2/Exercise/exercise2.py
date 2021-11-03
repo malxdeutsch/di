@@ -38,6 +38,13 @@ class TheIncredibles(Family):
             raise Exception 
             print("Not over 18 years old")
 
-    # def incredible_presentation(self):
+    def incredible_presentation(self):
+        return f"{person_dict["name"]}{person_dict["incredible_name"]}{person_dict["power"]}"
 
-the_incredibles= TheIncredibles()
+the_incredibles= TheIncredibles([
+    {"name":'Bob','age':35,'gender':'Male','is_child':False, "incredible_name"},
+    {"name":'Helen','age':32,'gender':'Female','is_child':False},
+    {"name":'Violet','age':14,'gender':'Female','is_child':True},
+    {'name':'Dash','age':10,'gender':'Male','is_child':True}
+    {"name":'Jack-Jack','age':1,'gender':'Male','is_child':True},
+    ], "Parr")
