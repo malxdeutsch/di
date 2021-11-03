@@ -61,3 +61,17 @@ planets()
 
 
 from faker import Faker
+fake = Faker()
+
+users = []
+new_dictionary = {}
+
+def add_dict(n):
+    for i in range(n):
+        new_dictionary["name"]= fake.name()
+        new_dictionary["address"] = fake.address()
+        new_dictionary["langage_code"] = fake.language_code()
+        users.append(new_dictionary)
+    print(users)
+
+add_dict(3)
