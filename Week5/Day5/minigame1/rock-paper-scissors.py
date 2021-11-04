@@ -1,21 +1,33 @@
 from game import Game
 
 def get_user_menu_choice():
-    want_play = input("A.Play a new game\n B. Show scores \n C.Quit \n")
-    if want_play in "cC":
-        break
-    elif want_play.upper()== "A" or want_play.upper()=="B":
-        return want_play
+    want_play = input("A.Play a new game\n B. Show scores \n C.Quit \n").upper()
+    return want_play
 
 
 def print_results(results):
-    #print(result)
-    pass
+    print(results)
+
 
 def main():
-    while get_user_menu_choice() == True:
-        if True:
-            play()
-        else:
-            print_results()
+    game= Game()
+    results = {'lose' : 0, 'win' : 0, 'draw' : 0}
+    choice = get_user_menu_choice()
+    while choice != "C":
+        if choice == "A":
+            result = game.play()
+            if result == 'lose':
+                results['lose'] += 1
+            if result == 'win':
+                results['win'] +=  1
+            if result == 'draw':
+                results['draw'] += 1                          
+        elif choice == 'B':
+            print_results(results)
+        choice = get_user_menu_choice()
+
+    print_results(results)
+   
+
+main()
 

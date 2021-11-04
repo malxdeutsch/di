@@ -23,11 +23,11 @@ class Game:
             end = "win"
         elif user_item == "rock" and computer_item =="scissors":
             end = "win"
-        elif comp_item == "scissors" and user_item =="paper":
+        elif computer_item == "scissors" and user_item =="paper":
             end = "lose"  
-        elif comp_item == "paper" and user_item =="rock":
+        elif computer_item == "paper" and user_item =="rock":
             end = "lose" 
-        elif comp_item == "rock" and user_item =="scissors":
+        elif computer_item == "rock" and user_item =="scissors":
             end = "lose" 
         return end
 
@@ -35,8 +35,7 @@ class Game:
     def play(self):
         user_turn = self. get_user_item()
         comp_turn = self.get_computer_item()
-        result = self.get_game_result(user_turn, comp_turn)
-        print(f"You selected {user_turn}. The computer selected {comp_turn}. You {result}.")
+        end_result = self.get_game_result(user_turn, comp_turn)
+        print(f"You selected {user_turn}. The computer selected {comp_turn}. You {end_result}.")
+        return end_result
 
-new_game=Game()
-print(new_game.play())
