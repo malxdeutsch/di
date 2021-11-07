@@ -29,9 +29,28 @@ class Text:
 strange = Text.from_file("the_stranger.txt")
 print(strange.common_word())
 
+# import nltk
+# nltk.download('stopwords')
+from nltk.tokenize import word_tokenize
+
 class TextModification(Text):
-    def __init__(self):
-        pass
-    
-    def no_punc(self):
-        
+    def no_punc (self, text):
+        self.text = text.translate(str.maketrans('', '', string.punctuation))
+
+    def no_english_stop(self,text):
+        # for word in text: 
+        #     if word not in en_stops:
+        #         print
+        text_tokens = word_tokenize(text)
+        tokens_without_sw = [word for word in text_tokens if not word in stopwords.words()]
+        return (tokens_without_sw)
+
+
+    def no_special_char(self,text):
+        new_text = ''.join(char for char in text if char.isalnum())
+        return(new_text)
+
+text_mod= TextModification()
+print(text_mod.no_punc(strange))
+print(text_mod.no_english_stop(strange))
+print(text_mod.no_special_char(strange))
