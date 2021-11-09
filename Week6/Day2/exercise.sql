@@ -30,8 +30,8 @@
 --insert into items (item , price) values ('Hard Disk',150);
 --insert into purchases (item_id,customer_id) values (4,3);
 
---select customers.f_name, customers.l_name, items.item, items.price
---from purchases
---inner join customers on purchases.customer_id = customers.customer_id
---inner join items on purchases.item_id = items.item_id
-
+select customers.f_name, customers.l_name, items.item, items.price
+from purchases
+inner join customers on purchases.customer_id = customers.customer_id
+inner join items on purchases.item_id = items.item_id
+where f_name = 'Scott'
